@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+  </head>
+  <body>
+    <%- include("./header.ejs")%>
+    <h2>product</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>category</th>
+        <th>Price</th>
+        <th>Remaining in Stock</th>
+      </tr>
+      <tr>
+        <td><%= product.product_name%></td>
+        <td><%=product.category_name%></td>
+        <td><%=product.product_price%></td>
+        <td><%=product.products_remaining%></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table class="products-list">
+      <tr>
+        <th>Item</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Remaining in stock</th>
+      </tr>
+      <% products.forEach((product)=>{ %>
+      <tr>
+        <td><%= product.product_name%></td>
+        <td><%= product.category_name%></td>
+        <td><%= product.product_price%></td>
+        <td><%= product.products_remaining%></td>
+      </tr>
+      <% })%>
+    </table>
+  </body>
+</html>
