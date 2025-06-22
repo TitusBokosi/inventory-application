@@ -3,27 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
     <title>Home</title>
   </head>
   <body>
     <%- include("./header.ejs") %>
-    <div class="products">
-      <h2>Products</h2>
-      <div class="products-container">
-        <div class="products-header">
-          <form action="post">
-            <input
-              type="text"
-              name="search"
-              placeholder="Search for products..."
-            />
-          </form>
-          <div class="products-header-actions">
-            <a href=""><button>New product</button></a>
-          </div>
-        </div>
-      </div>
-      <%- include("./productsTable.ejs")%>
+    <div class="container">
+      <%- include("./productsTable.ejs", {title: "Products"})%>
     </div>
   </body>
 </html>

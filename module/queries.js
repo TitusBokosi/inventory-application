@@ -26,9 +26,16 @@ async function getProductById(id) {
   console.log(rows);
   return rows[0];
 }
+async function createNewProduct(name, price, quantity, category) {
+  await pool.query(
+    "INSERT INTO products (product_name,product_price, products_remaining, category_id) VALUES ($1, $2, $3, $4) ",
+    [name, price, quantity, category]
+  );
+}
 module.exports = {
   getAllCategories,
   getAllProducts,
   getCategoryById,
   getProductById,
+  createNewProduct,
 };

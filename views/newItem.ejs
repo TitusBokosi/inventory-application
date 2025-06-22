@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>New</title>
+  </head>
+  <body>
+    <%- include("./header")%>
+    <div class="container">
+      <form action="/items/new" method="post" class="form">
+        <h2>Add new item</h2>
+        <div class="error" style="color: red">
+          <% errors.forEach(error => { %>
+
+          <p><%= error.msg %></p>
+
+          <% })%>
+        </div>
+        <div class="input-container">
+          <label for="item-name">Product name</label
+          ><input id="item-name" type="text" name="name" />
+        </div>
+        <div class="input-container">
+          <label for="item-price">Product Price</label
+          ><input id="item-price" type="text" name="price" />
+        </div>
+        <div class="input-container">
+          <label for="Quantity">Quantity</label
+          ><input id="Quantity" type="text" name="quantity" />
+        </div>
+        <div class="input-container">
+          <label for="item-category">Category</label>
+          <select type="select" id="item-category" name="category">
+            <% categories.forEach(category=>{ %>
+            <option value=" <%= category.category_id %>">
+              <%= category.category_name%>
+            </option>
+            <% })%>
+          </select>
+        </div>
+        <button type="submit">Add item</button>
+      </form>
+    </div>
+  </body>
+</html>
